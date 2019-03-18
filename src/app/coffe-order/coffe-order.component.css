@@ -1,0 +1,15 @@
+.btn-coffee{
+  background: black;
+  margin-right: 5px;
+}
+.card{
+  height: 160px;
+}
+.basket-card{
+  height: 97px;
+}
+.btn-bottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

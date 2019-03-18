@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h2 id="coffe-title">
+          Choose your best coffee ☕
+        </h2>
+        <div class="row">
+          <div class="col" *ngFor="let coffee of coffees">
+            <div class="card">
+              <div class="card-body">
+                <h2>
+                  {{coffee.coffeeType}}
+                </h2>
+                <h4>
+                  {{coffee.price}} ₺
+                </h4>
+                <button id="coffee.id" class="btn btn-primary btn-block btn-coffee btn-bottom"
+                  (click)="addToBasket(coffee.coffeeType)">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h2>
+                  Chai Tea Latte
+                </h2>
+                <button id="chaitea" class="btn btn-primary btn-block btn-coffee btn-bottom"
+                  (click)="addToBasket('chaitea')">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h2>
+                  White Mocha
+                </h2>
+                <button id="white" class="btn btn-primary btn-block btn-coffee btn-bottom" (click)="addToBasket('white')">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h2>
+                  Latte
+                </h2>
+                <button id="latte" class="btn btn-primary btn-block btn-coffee btn-bottom" (click)="addToBasket('latte')">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <hr>
+        <h3>
+          My cart 🛒
+        </h3>
+        <div class="row" *ngIf="orders.length">
+          <div class="col-md-3"  *ngFor="let order of orders;let i = index">
+            <div class="card basket-card">
+              <div class="card-body">
+                <h6>
+                  {{order.coffeeType}} - {{order.price}} ₺
+                </h6>
+                <button class="btn btn-warning btn-block btn-bottom" (click)="removeFromBasket(i)"> 🗑️ Remove </button> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="font-size-24 price">
+          Price: {{ totalPrice }} ₺
+        </p>
+        <p>
+          <button id="buy-button" class="btn btn-success" (click)="buy()" [disabled]="totalPrice === 0">
+            BUY
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

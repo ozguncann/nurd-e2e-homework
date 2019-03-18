@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.jumbotron button, .jumbotron h2 {
+  font-family: 'Sniglet', cursive;
+}
+
+.font-size-24 {
+  font-size: 24px;
+}
