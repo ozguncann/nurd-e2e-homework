@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e --port=4201",
+    "e2e:debug":"node --inspect-brk ./node_modules/@angular/cli/bin/ng e2e --protractor-config ./e2e/protractor.conf.js  --port=4201"
   },
   "private": true,
   "dependencies": {

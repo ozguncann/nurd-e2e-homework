@@ -1,23 +1,24 @@
 import { browser, by, element } from 'protractor';
 
 export class CoffeOrder {
-  navigateTo() {
-    return browser.get('/');
+  
+
+
+
+
+  /**
+   * 
+   * @param string Given string will be returned first character uppercased.
+   */
+  jsUcfirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  clickButton(buttonId) {
-    element(by.id(buttonId)).click();
-  }
-
-  getPriceText(){
-    return element(by.css('.price')).getText();
-  }
-
-  getBuyButtonStatus(){
-    return element(by.id('buy-button')).isEnabled()
-  }
-
-  getPageTitleText() {
-    return element(by.id('coffe-title')).getText();
+  /**
+  * 
+  * @param string Given string will be returned first character lowercased.
+  */
+  jsLcfirst(string) {
+    return string.charAt(0).toLowerCase() + string.slice(1);
   }
 }

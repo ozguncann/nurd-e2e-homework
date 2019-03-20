@@ -19,11 +19,21 @@ export class CofferOrderComponent implements OnInit {
   }
 
   addToBasket(coffeeType) {
-    this.orders.push({
-      coffeeType,
-      price: this.coffMap[this.jsLcfirst(coffeeType)]
-    });
-    this.totalPrice += this.coffMap[this.jsLcfirst(coffeeType)];
+
+    if(coffeeType === 'Latte'){
+      this.orders.push({
+        coffeeType,
+        price: 21
+      });
+      this.totalPrice += 21; 
+    } else {
+      this.orders.push({
+        coffeeType,
+        price: this.coffMap[this.jsLcfirst(coffeeType)]
+      });
+      this.totalPrice += this.coffMap[this.jsLcfirst(coffeeType)];
+    }
+ 
   }
 
   removeFromBasket(i) {
@@ -55,7 +65,7 @@ export class CofferOrderComponent implements OnInit {
         id: this.getRandomInt(10, 20),
       })
     }
-    this.coffees.sort((a, b) => a.id - b.id);
+    // this.coffees.sort((a, b) => a.id - b.id);
   }
 
   getRandomInt(min, max) {
